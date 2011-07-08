@@ -1,0 +1,47 @@
+.dim0xff-folding_tree-item {
+    position: relative;
+    cursor: pointer;
+    list-style: none;
+}
+
+.dim0xff-folding_tree-expander {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 16px;
+    height: 16px;
+}
+
+.dim0xff-folding_tree-item-data {
+    margin-left: 20px;
+    padding-left: 0:
+}
+.dim0xff-folding_tree-container {
+    margin: 0 0 0 20px;
+    padding-left: 0;
+}
+
+.dim0xff-folding_tree-expanded .dim0xff-folding_tree-expander {
+    background-image: url(images/dim0xff.folding_tree-expanded.png);
+}
+
+.dim0xff-folding_tree-collapsed .dim0xff-folding_tree-expander {
+    background-image: url(images/dim0xff.folding_tree-collapsed.png);
+}
+
+.dim0xff-folding_tree-selected > .dim0xff-folding_tree-item-data {
+    background-color: #c0e5f0;
+}
+
+.dim0xff-folding_tree-item-data:hover {
+    border: 1px dotted #e0e0e0;
+    background-color: #f0f0f0;
+    font-size: 0.95em;
+}
+
+.dim0xff-folding_tree-selected > .dim0xff-folding_tree-item-data {
+    background-color: #e0e0e0;
+    font-weight: bold;
+    font-size: 0.95em;
+    border: 1px solid #d0d0d0;
+}
