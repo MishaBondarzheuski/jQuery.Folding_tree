@@ -1,0 +1,14 @@
+About
+=====
+
+jQuery.Folding_tree is a jQuery UI plugin for creating folding trees, like folders/files trees.
+
+You can use plugins aka bindings to extend jQuery.Folding_tree:
+    * ajax_binding - binding to load tree items via ajax
+
+TODO
+====
+    * Documentation
+    * Examples
+    * More bindings
+    * Clear code
