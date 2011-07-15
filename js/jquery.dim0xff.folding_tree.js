@@ -1,6 +1,6 @@
 /*
- * JQuery.Folding_tree
- * v2011-07-08
+ * JQuery folding tree
+ * v2011-07-15
  *
  * Copyleft 2011 Dmitry Latin <dim0xff@gmail.com>
  * http://www.dim0xff.com
@@ -12,11 +12,12 @@
  * Depends on:
  * jquery.ui.widget.js
  *
+ *
  */
 
 (function ($) {
     $.widget("dim0xff.folding_tree", {
-        VERSION: "2011-07-08",
+        VERSION: "2011-07-15",
         options: {
             child_prefix:            "child-of-",
             collapsed_initial_state: true,
@@ -333,3 +334,36 @@
         }
     });
 })(jQuery);
+
+/*
+ * Extend to Aspect Oriented Programming
+ * More about AOP in jQuery UI: http://bililite.com/blog/extending-jquery-ui-widgets/
+ */
+$.extend($.dim0xff.folding_tree.prototype, {
+    yield: null,
+    returnValues: { },
+    before: function(method, f) {
+        var original = this[method];
+        this[method] = function() {
+            f.apply(this, arguments);
+            return original.apply(this, arguments);
+        };
+    },
+    after: function(method, f) {
+        var original = this[method];
+        this[method] = function() {
+            this.returnValues[method] = original.apply(this, arguments);
+            return f.apply(this, arguments);
+        }
+    },
+    around: function(method, f) {
+        var original = this[method];
+        this[method] = function() {
+            var tmp = this.yield;
+            this.yield = original;
+            var ret = f.apply(this, arguments);
+            this.yield = tmp;
+            return ret;
+        }
+    }
+});
