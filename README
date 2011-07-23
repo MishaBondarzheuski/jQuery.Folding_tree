@@ -6,9 +6,10 @@ jQuery.Folding_tree is a jQuery UI plugin for creating folding trees, like folde
 You can use plugins aka bindings to extend jQuery.Folding_tree:
     * ajax_binding - binding to load tree items via ajax
 
+Look some examples here: http://folding-tree.dim0xff.com/
+
 TODO
 ====
     * Documentation
-    * Examples
     * More bindings
     * Clear code
